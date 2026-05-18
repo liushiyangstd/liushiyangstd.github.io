@@ -4,12 +4,6 @@
       "id_name": "cf-links",
       "desc": "Common links included in circle friends",
       "link_list": [
-        {
-          "name": "CWorld Site",
-          "intro": "求知若愚，虚怀若谷",
-          "link": "https://cworld0.com/",
-          "avatar": "https://cravatar.cn/avatar/1ffe42aa45a6b1444a786b1f32dfa8aa?s=200"
-        }
       ]
     },
     {
