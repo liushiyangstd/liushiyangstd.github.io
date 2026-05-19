@@ -52,6 +52,7 @@ export const theme: ThemeUserConfig = {
       { title: 'Docs', link: '/docs' },
       { title: 'Projects', link: '/projects' },
       { title: 'Links', link: '/links' },
+      { title: 'Links', link: '/life' },
       { title: 'About', link: '/about' }
     ]
   },
