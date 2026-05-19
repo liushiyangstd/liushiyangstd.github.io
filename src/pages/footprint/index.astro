@@ -1,0 +1,94 @@
+---
+import { Timeline } from 'astro-pure/user'
+import PageLayout from '@/layouts/CommonPage.astro'
+import lifeData from '../../data/life.json'
+
+const headings = [
+  { depth: 2, slug: 'movies', text: 'Movies' },
+  { depth: 2, slug: 'games', text: 'Games' },
+  { depth: 2, slug: 'travels', text: 'Travels' },
+  { depth: 2, slug: 'restaurants', text: 'Restaurants' }
+]
+
+const { movies, games, travels, restaurants } = lifeData
+---
+
+<PageLayout title='Footprint' {headings} comment>
+  <p>Every movie, every game, every place — a little step that made me.</p>
+
+  {/* 看过的电影 */}
+  <h2 id='movies'>Movies</h2>
+  <div class='grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3'>
+    {
+      movies.map((movie) => (
+        <div class='not-prose relative block overflow-hidden rounded-2xl border bg-muted transition-all hover:border-foreground/25 hover:shadow-sm'>
+          <img
+            src={movie.poster}
+            alt={movie.name}
+            class='aspect-[4/3] w-full object-cover'
+            loading='lazy'
+          />
+          <div class='flex flex-col gap-y-1 px-5 py-3'>
+            <h3 class='text-lg font-medium'>{movie.name}</h3>
+            <p class='text-sm text-muted-foreground'>{movie.review}</p>
+            {movie.date && <p class='text-xs text-muted-foreground'>{movie.date}</p>}
+          </div>
+        </div>
+      ))
+    }
+  </div>
+
+  {/* 玩过的东西 */}
+  <h2 id='games'>Games</h2>
+  <div class='grid grid-cols-1 gap-3 sm:grid-cols-2'>
+    {
+      games.map((game) => (
+        <a
+          href={game.href}
+          target='_blank'
+          class='not-prose group relative block h-36 overflow-hidden rounded-2xl border bg-muted transition-all hover:border-foreground/25 hover:shadow-sm'
+        >
+          <img
+            src={game.icon}
+            alt={game.name}
+            class='absolute inset-0 h-full w-full object-cover opacity-60 transition-opacity group-hover:opacity-100 dark:opacity-35'
+            loading='lazy'
+          />
+          <div
+            class='absolute inset-x-0 bottom-0 z-10 flex flex-col justify-end px-5 pb-4 pt-12'
+            style='background-image: linear-gradient(to bottom, transparent, hsl(var(--card) / 1) 80%);'
+          >
+            <span class='font-medium text-foreground'>{game.name}</span>
+            <span class='text-sm text-muted-foreground'>{game.description}</span>
+          </div>
+        </a>
+      ))
+    }
+  </div>
+
+  {/* 去过的地方 */}
+  <h2 id='travels'>Travels</h2>
+  <Timeline events={travels} />
+
+  {/* 吃过的餐厅 */}
+  <h2 id='restaurants'>Restaurants</h2>
+  <div class='grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3'>
+    {
+      restaurants.map((restaurant) => (
+        <div class='not-prose relative block overflow-hidden rounded-2xl border bg-muted transition-all hover:border-foreground/25 hover:shadow-sm'>
+          <img
+            src={restaurant.photo}
+            alt={restaurant.name}
+            class='aspect-[4/3] w-full object-cover'
+            loading='lazy'
+          />
+          <div class='flex flex-col gap-y-1 px-5 py-3'>
+            <h3 class='text-lg font-medium'>{restaurant.name}</h3>
+            <p class='text-sm text-muted-foreground'>{restaurant.review}</p>
+            {restaurant.date && <p class='text-xs text-muted-foreground'>{restaurant.date}</p>}
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</PageLayout>

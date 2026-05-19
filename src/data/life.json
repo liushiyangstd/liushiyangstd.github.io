@@ -1,0 +1,50 @@
+{
+  "movies": [
+    {
+      "name": "守护解放西 6",
+      "poster": "/images/movies/shouhujiefangxi.jpg",
+      "review": "看到不同的人生，用他人的事件警示自己！",
+      "date": "2025-8"
+    }
+  ],
+  "games": [
+    {
+      "name": "Counter-Strike 2",
+      "description": "世界上最好的FPS游戏",
+      "href": "https://www.counter-strike.net/cs2",
+      "icon": "/images/games/cs2.svg"
+    },
+    {
+      "name": "Grand Theft Auto V",
+      "description": "侠盗猎车手",
+      "href": "https://www.rockstargames.com/gta-v/",
+      "icon": "/images/games/gtav.svg"
+    },
+    {
+      "name": "潜水员戴夫",
+      "description": "捕鱼 寿司 嘟嘟嘟~~~",
+      "href": "https://store.steampowered.com/app/1868140/_DAVE_THE_DIVER/",
+      "icon": "/images/games/dave.jpg"
+    },
+    {
+      "name": "Red Dead Redemption 2",
+      "description": "1899年，枪手和亡命徒的时代已然走到尽头……",
+      "href": "https://www.rockstargames.com/zh/reddeadredemption2",
+      "icon": "/images/games/rdr2.svg"
+    }
+  ],
+  "travels": [
+    {
+      "date": "2001-03 ~ Now",
+      "content": "中国·上海 — Living Loaction"
+    }
+  ],
+  "restaurants": [
+  {
+    "name": "海底捞",
+    "photo": "/images/restaurants/haidilao.jpg",
+    "review": "番茄锅+虾滑永远的神，服务天花板",
+    "date": ""
+  }
+  ]
+}
